@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/drawable/back.xml" value="0.189" />
+        <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/drawable/call.xml" value="0.189" />
+        <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/drawable/chatscree.xml" value="0.189" />
+        <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/drawable/send.xml" value="0.189" />
+        <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/drawable/sendshape.xml" value="0.189" />
         <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/drawable/signborder.xml" value="0.199" />
+        <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/layout/activity_chats_screen.xml" value="0.25" />
         <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/layout/activity_main.xml" value="0.18840579710144928" />
         <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/layout/activity_signin.xml" value="0.20878623188405798" />
         <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/layout/activity_signup.xml" value="0.25" />
@@ -11,6 +17,7 @@
         <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/layout/fragment_chats.xml" value="0.209375" />
         <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/layout/fragment_status.xml" value="0.18840579710144928" />
         <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/layout/sampe_show_user.xml" value="0.18840579710144928" />
+        <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/menu/chatmenu.xml" value="0.209375" />
         <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/menu/menu.xml" value="0.209375" />
       </map>
     </option>
