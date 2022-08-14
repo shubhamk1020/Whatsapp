@@ -2,7 +2,7 @@ package com.shubhamk.myapplicationWhatsapp.Model;
 
 public class Users {
 
-    String profilepic, UserName, mail, password, userId, lastmsg;
+    String profilepic, UserName, mail, password, userId, lastmsg, status;
 
     // constructor
 
@@ -14,6 +14,7 @@ public class Users {
         this.password = password;
         this.userId = userId;
         this.lastmsg = lastmsg;
+
     }
     // Empty constructor
 
@@ -30,6 +31,15 @@ public class Users {
 
 
     // getters and setters
+
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     public String getProfilepic() {
         return profilepic;

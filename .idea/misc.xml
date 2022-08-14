@@ -4,19 +4,29 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/drawable/back.xml" value="0.189" />
+        <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/drawable/bg_receiver.xml" value="0.192" />
+        <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/drawable/bg_sender.xml" value="0.192" />
         <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/drawable/call.xml" value="0.189" />
         <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/drawable/chatscree.xml" value="0.189" />
+        <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/drawable/ic_baseline_notifications_24.xml" value="0.192" />
+        <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/drawable/lock.xml" value="0.192" />
+        <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/drawable/saveback.xml" value="0.192" />
         <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/drawable/send.xml" value="0.189" />
         <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/drawable/sendshape.xml" value="0.189" />
+        <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/drawable/settingbac.xml" value="0.192" />
         <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/drawable/signborder.xml" value="0.199" />
-        <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/layout/activity_chats_screen.xml" value="0.25" />
+        <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/layout/activity_chats_screen.xml" value="0.32977850697292865" />
+        <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/layout/activity_group_chat.xml" value="0.18478260869565216" />
         <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/layout/activity_main.xml" value="0.18840579710144928" />
+        <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/layout/activity_setting.xml" value="0.25" />
         <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/layout/activity_signin.xml" value="0.20878623188405798" />
         <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/layout/activity_signup.xml" value="0.25" />
         <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/layout/activity_splash_screen.xml" value="0.2" />
         <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/layout/fragment_chats.xml" value="0.209375" />
         <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/layout/fragment_status.xml" value="0.18840579710144928" />
+        <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/layout/samle_receiver.xml" value="0.9" />
         <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/layout/sampe_show_user.xml" value="0.18840579710144928" />
+        <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/layout/sample_sender.xml" value="0.25" />
         <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/menu/chatmenu.xml" value="0.209375" />
         <entry key="..\:/Users/shree/AndroidStudioProjects/Whatsapp/app/src/main/res/menu/menu.xml" value="0.209375" />
       </map>

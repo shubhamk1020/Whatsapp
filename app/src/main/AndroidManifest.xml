@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Whatsapp">
         <activity
+            android:name=".SettingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GroupChatActivity"
+            android:exported="false" />
+        <activity
             android:name=".ChatsScreenActivity"
             android:exported="false" />
         <activity

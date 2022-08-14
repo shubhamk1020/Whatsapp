@@ -20,6 +20,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.shubhamk.myapplicationWhatsapp.Adapter.FragmentsAdapter;
 import com.shubhamk.myapplicationWhatsapp.databinding.ActivityMainBinding;
 
+import java.security.acl.Group;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -71,6 +73,10 @@ public class MainActivity extends AppCompatActivity {
         switch(item.getItemId()){
 
             case R.id.newgroup:
+
+                Intent intent = new Intent(MainActivity.this, GroupChatActivity.class);
+                startActivity(intent);
+
                 break;
             case R.id.broadcast:
                 break;
@@ -81,7 +87,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.payment:
                 break;
             case R.id.Setting:
-                Toast.makeText(this, "Setting Clicked ", Toast.LENGTH_SHORT).show();
+                Intent setting = new Intent(MainActivity.this, SettingActivity.class);
+                startActivity(setting);
                 break;
             case R.id.logout:
 
