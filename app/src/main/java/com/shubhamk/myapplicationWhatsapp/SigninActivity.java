@@ -1,20 +1,16 @@
 package com.shubhamk.myapplicationWhatsapp;
 
-import static android.content.ContentValues.TAG;
+
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -30,7 +26,7 @@ import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.FirebaseDatabase;
 import com.shubhamk.myapplicationWhatsapp.Model.Users;
 import com.shubhamk.myapplicationWhatsapp.databinding.ActivitySigninBinding;
-import com.shubhamk.myapplicationWhatsapp.databinding.ActivitySignupBinding;
+
 
 public class SigninActivity extends AppCompatActivity {
 
@@ -74,6 +70,15 @@ public class SigninActivity extends AppCompatActivity {
         binding.btnsignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(binding.etEmail.getText().toString().isEmpty()){
+                    binding.etEmail.setError("Enter your Email");
+                    return;
+                }
+                if(binding.etPass.getText().toString().isEmpty()){
+                    binding.etPass.setError("Enter your password");
+                    return;
+                }
+
                 progressDialog.show();
 
                 mAuth.signInWithEmailAndPassword(binding.etEmail.getText().toString(),binding.etPass.getText().toString())

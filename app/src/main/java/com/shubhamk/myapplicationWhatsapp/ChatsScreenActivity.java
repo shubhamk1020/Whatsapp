@@ -38,8 +38,8 @@ public class ChatsScreenActivity extends AppCompatActivity {
 
         database = FirebaseDatabase.getInstance();
 
-        final String senderid = auth.getUid();
-        String receverid = getIntent().getStringExtra("userId");
+        final String senderId = auth.getUid();
+        String receiverId = getIntent().getStringExtra("userId");
         String profilePic = getIntent().getStringExtra("profilePic");
         String userName = getIntent().getStringExtra("userName");
 
@@ -64,8 +64,8 @@ public class ChatsScreenActivity extends AppCompatActivity {
         binding.chatsRecyclerview.setLayoutManager(layoutManager);
 
 
-        final String senderRoom = senderid + receverid;
-        final String receiverRoom = receverid + senderid;
+        final String senderRoom = senderId + receiverId;
+        final String receiverRoom = receiverId + senderId;
 
         database.getReference().child("chats")
                 .child(senderRoom)
@@ -76,6 +76,9 @@ public class ChatsScreenActivity extends AppCompatActivity {
                         messageModels.clear();
                         for(DataSnapshot dataSnapshot : snapshot.getChildren()){
                             MessageModel model = dataSnapshot.getValue(MessageModel.class);
+
+                            model.setMessageId(snapshot.getKey());
+
                             messageModels.add(model);
                         }
 
@@ -93,7 +96,7 @@ public class ChatsScreenActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 String message = binding.etMessage.getText().toString();
-                final MessageModel model = new MessageModel(senderid , message);
+                final MessageModel model = new MessageModel(senderId , message);
 
                 model.setTimestamp(new Date().getTime());
                 binding.etMessage.setText("");

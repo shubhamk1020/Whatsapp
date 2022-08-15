@@ -3,7 +3,6 @@ package com.shubhamk.myapplicationWhatsapp;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -24,6 +23,7 @@ import com.shubhamk.myapplicationWhatsapp.databinding.ActivitySettingBinding;
 import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 public class SettingActivity extends AppCompatActivity {
 
@@ -31,6 +31,7 @@ public class SettingActivity extends AppCompatActivity {
     FirebaseStorage storage;
     FirebaseAuth auth;
     FirebaseDatabase database;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +44,7 @@ public class SettingActivity extends AppCompatActivity {
         storage = FirebaseStorage.getInstance();
         auth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
+
 
         binding.backArrow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,37 +99,38 @@ public class SettingActivity extends AppCompatActivity {
                 Intent i = new Intent();
                 i.setAction(Intent.ACTION_GET_CONTENT);
                 i.setType("image/*");// */*
-                startActivityForResult(i,33);
+             startActivityForResult(i,33);
 
             }
         });
-
 
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(data.getData() != null){
+        if(data.getData() != null) {
             Uri sFiles = data.getData();
             binding.profileImage.setImageURI(sFiles);
+            final StorageReference reference = storage.getReference().child("Profile_pictures")
+                    .child(Objects.requireNonNull(FirebaseAuth.getInstance().getUid()));
 
-            final StorageReference reference = storage.getReference().child("profile_pictures")
-                    .child(FirebaseAuth.getInstance().getUid());
             reference.putFile(sFiles).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                   reference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                       @Override
-                       public void onSuccess(Uri uri) {
-                           database.getReference().child("Users").child(FirebaseAuth.getInstance().getUid())
-                                   .child("profilepic").setValue(uri.toString());
 
-                           Toast.makeText(SettingActivity.this, "Upload Image Successfully", Toast.LENGTH_SHORT).show();
-                       }
-                   });
+                    reference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            database.getReference().child("Users").child(FirebaseAuth.getInstance().getUid()).child("profilepic").setValue(uri.toString());
+
+
+                        }
+                    });
+
                 }
             });
+
+        }}
         }
-    }
-}
+

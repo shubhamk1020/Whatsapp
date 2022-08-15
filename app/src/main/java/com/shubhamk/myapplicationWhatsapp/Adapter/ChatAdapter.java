@@ -1,6 +1,8 @@
 package com.shubhamk.myapplicationWhatsapp.Adapter;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 import com.shubhamk.myapplicationWhatsapp.Model.MessageModel;
 import com.shubhamk.myapplicationWhatsapp.R;
 
@@ -19,10 +22,17 @@ public class ChatAdapter extends RecyclerView.Adapter {
 
     ArrayList<MessageModel> messageModels;
     Context context;
+    String recId;
 
     public ChatAdapter(ArrayList<MessageModel> messageModels, Context context) {
         this.messageModels = messageModels;
         this.context = context;
+    }
+
+    public ChatAdapter(ArrayList<MessageModel> messageModels, Context context, String recId) {
+        this.messageModels = messageModels;
+        this.context = context;
+        this.recId = recId;
     }
 
     int SENDER_VIEW_TYPE = 1;
@@ -49,6 +59,31 @@ public class ChatAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
         MessageModel messageModel = messageModels.get(position);
+
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                new AlertDialog.Builder(context).setTitle("Delete").setMessage("Are you sure Delete this message")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                                String senderRoom = FirebaseAuth.getInstance().getUid()+recId;
+                                database.getReference().child("chats").child(senderRoom)
+                                        .child(messageModel.getMessageId()).setValue(null);
+
+                            }
+                        }).setNeutralButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                }).show();
+
+                return false;
+            }
+        });
         if(holder.getClass() == SenderViewHolder.class){
             ((SenderViewHolder)holder).SenderMsg.setText(messageModel.getMessage());
         }

@@ -97,7 +97,7 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.ViewHolder> 
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            img = itemView.findViewById(R.id.profile_image);
+            img = itemView.findViewById(R.id.profileImage);
             txtUser = itemView.findViewById(R.id.usertxt);
             txtlast = itemView.findViewById(R.id.lastmsg);
 
