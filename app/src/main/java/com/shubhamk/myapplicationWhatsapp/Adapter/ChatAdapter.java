@@ -63,13 +63,13 @@ public class ChatAdapter extends RecyclerView.Adapter {
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                new AlertDialog.Builder(context).setTitle("Delete").setMessage("Are you sure Delete this message")
+                new AlertDialog.Builder(context).setTitle("Delete").setMessage("Are you sure you want to delete this message")
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
 
                                 FirebaseDatabase database = FirebaseDatabase.getInstance();
-                                String senderRoom = FirebaseAuth.getInstance().getUid()+recId;
+                                String senderRoom = FirebaseAuth.getInstance().getUid() + recId;
                                 database.getReference().child("chats").child(senderRoom)
                                         .child(messageModel.getMessageId()).setValue(null);
 

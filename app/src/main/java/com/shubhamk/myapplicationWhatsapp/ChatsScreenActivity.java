@@ -77,7 +77,7 @@ public class ChatsScreenActivity extends AppCompatActivity {
                         for(DataSnapshot dataSnapshot : snapshot.getChildren()){
                             MessageModel model = dataSnapshot.getValue(MessageModel.class);
 
-                            model.setMessageId(snapshot.getKey());
+                            model.setMessageId(dataSnapshot.getKey());
 
                             messageModels.add(model);
                         }
